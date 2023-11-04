@@ -1,0 +1,28 @@
+.main {
+  width: 600px;
+  height: 60vh;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  display: grid;
+  width: 512px;
+  height: 56px;
+  grid-template-columns: repeat(4, minmax(80px, 140px));
+  grid-gap: 20px;
+  grid-template-rows: 56px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

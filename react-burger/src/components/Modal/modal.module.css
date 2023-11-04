@@ -1,0 +1,30 @@
+.modal {
+  width: 600px;
+  height: 70vh;
+  background-color: #1C1C21;
+  position: fixed;
+  z-index: 99;
+  top: 10%;
+  left: 30%;
+  border-radius: 2px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 540px;
+}
+
+.button {
+  border: none;
+  background: none;
+}
+
+.img {
+  pointer-events: none;
+}
+
+.button img {
+  pointer-events: none;
+}

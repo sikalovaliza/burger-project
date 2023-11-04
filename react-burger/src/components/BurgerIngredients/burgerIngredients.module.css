@@ -1,0 +1,87 @@
+.ingredients {
+  width: 30vw;
+  margin: 0;
+  padding: 0;
+  margin-top: 40px;
+}
+
+title {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.tabs {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #8585AD;
+  width: 33.333%;
+  height: 56px;
+}
+
+.button_active {
+  background: none;
+  border: none;
+  color: white;
+  border-bottom: 2px solid #4C4CFF;
+  width: 33.333%;
+  height: 56px;
+}
+
+.scroll {
+  height: 60vh;
+  overflow: auto;
+  scrollbar-width: 8px;
+  scrollbar-color: #4C4CFF;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  margin-top: 24px;
+  display: grid;
+  row-gap: 32px;
+  column-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(272px, 272px));
+}
+
+.item {
+  position: relative;
+  width: 272px;
+  height: 208px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cost {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 62px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1800px) {
+  .ingredients {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .ingredients {
+    width: 100%;
+  }
+}
