@@ -5,7 +5,7 @@ import { Logo } from '@ya.praktikum/react-developer-burger-ui-components';
 import { BurgerIcon, ListIcon, ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 function Header () {
   return (
-    <div className={ styles.header_space }>
+    <header className={ styles.header_space }>
       <div className={ styles.header }>
         <div className={ styles.cards }>
           <div className={ styles.box }>
@@ -25,7 +25,7 @@ function Header () {
           <button className={" ml-2 text text_type_main-small text_color_inactive " + styles.button } >Личный кабинет</button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 export default Header;

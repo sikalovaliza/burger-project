@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Ingredients from '../BurgerIngredients/burgerIngredients';
-import Constructor from '../BurgerConstructor/burgerConstructor';
+import BurgerIngredients from '../BurgerIngredients/burgerIngredients';
+import BurgerConstructor from '../BurgerConstructor/burgerConstructor';
 import styles from './appMain.module.css';
-function Main () {
+function Main (props) {
   return (
-    <div className={ styles.main }>
-      <Ingredients />
-      <Constructor />
-    </div>
+    <main className={ styles.main }>
+      <BurgerIngredients ingredients = { props.ingredients } />
+      <BurgerConstructor />
+    </main>
   );
 }
 export default Main;

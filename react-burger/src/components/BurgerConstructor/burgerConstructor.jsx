@@ -2,17 +2,17 @@ import styles from './burgerConstructor.module.css';
 import { useState, useEffect, useRef } from 'react';
 import '@ya.praktikum/react-developer-burger-ui-components';
 import { ConstructorElement, DragIcon, Button } from '@ya.praktikum/react-developer-burger-ui-components';
-import img1 from '../../images/burgerConstructor1.svg';
-import img2 from '../../images/burgerConstructor2.svg';
-import img3 from '../../images/burgerConstructor3.svg';
-import img4 from '../../images/burgerConstructor4.svg';
-import img5 from '../../images/burgerConstructor5.svg';
-import icon from '../../images/icon.svg';
+import img1 from '../../images/BurgerConstructor1.svg';
+import img2 from '../../images/BurgerConstructor2.svg';
+import img3 from '../../images/BurgerConstructor3.svg';
+import img4 from '../../images/BurgerConstructor4.svg';
+import img5 from '../../images/BurgerConstructor5.svg';
+import icon from '../../images/Icon.svg';
 import ModalOverlay from '../ModalOverlay/ModalOverlay';
-import Modal from '../Modal/modal';
+import Modal from '../Modal/Modal';
 import OrderDetails from '../OrderDetails/OrderDetails';
 
-function Constructor () {
+function BurgerConstructor () {
   const [showModal, setShowModal] = useState(false);
 
    const showModalHandler = () => {
@@ -23,81 +23,66 @@ function Constructor () {
     setShowModal(false);
   };
 
-  useEffect(() => {
-    document.addEventListener("keydown", closeModalHandler);
-    return () => {
-      document.removeEventListener("keydown", closeModalHandler);
-    };
-  }, []);
-
   const modalRef = useRef();
-  
-  const closeModalOverlayHandler = (event) => {
-    if (event.target === modalRef.current) {
-      setShowModal(true);
-    } else {
-      closeModalHandler();
-    }
-  }
+
+  const componentsData = [
+    {
+      text: "Соус традиционный галактический",
+      price: 30,
+      thumbnail: img2
+    },
+    {
+      text: "Мясо бессмертных моллюсков Protostomia",
+      price: 300,
+      thumbnail: img3
+    },
+    {
+      text: "Плоды Фалленианского дерева",
+      price: 80,
+      thumbnail: img4
+    },
+    {
+      text: "Хрустящие минеральные кольца",
+      price: 80,
+      thumbnail: img5
+    },
+    {
+      text: "Хрустящие минеральные кольца",
+      price: 80,
+      thumbnail: img5
+    },
+  ];
+
+  const renderedComponents = componentsData.map((component, index) => (
+    <div className={ styles.card } key={index}>
+      <DragIcon type="primary" />
+      <ConstructorElement
+        text={component.text}
+        price={component.price}
+        thumbnail={component.thumbnail}
+      />
+    </div>
+  ));
 
   return (
     <div className={ styles.burgerConstructor + " mt-25"}>
       <div className={ styles.burgerIngredients }>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }} className="pl-4 pr-4">
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end'}} className=" pl-6 ">
+        <div className={ styles.cards + " pl-4 pr-4 "}>
+          <div className={ styles.card_top + " pl-6 " }>
             <ConstructorElement
               type="top"
               isLocked={true}
-              text="Краторная булка N-200i"
+              text="Краторная булка N-200i (верх) "
               price={50}
               thumbnail={img1}
             />
           </div>
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            <DragIcon type="primary" />
-            <ConstructorElement
-              text="Соус традиционный галактический"
-              price={30}
-              thumbnail={img2}
-            />
-          </div>
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            <DragIcon type="primary" />
-            <ConstructorElement
-              text="Мясо бессмертных моллюсков Protostomia"
-              price={300}
-              thumbnail={img3}
-            />
-          </div>
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            <DragIcon type="primary" />
-            <ConstructorElement
-              text="Плоды Фалленианского дерева"
-              price={80}
-              thumbnail={img4}
-            />
-          </div>
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            <DragIcon type="primary" />
-            <ConstructorElement
-              text="Хрустящие минеральные кольца"
-              price={80}
-              thumbnail={img5}
-            />
-          </div>
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            <DragIcon type="primary" />
-            <ConstructorElement
-              text="Хрустящие минеральные кольца"
-              price={80}
-              thumbnail={img5}
-            />
-          </div>
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end'}} className=" pl-6 ">
+          { renderedComponents }
+          <div className={ styles.card_top + " pl-6 " }>
             <ConstructorElement
               type="bottom"
               isLocked={true}
-              text="Краторная булка N-200i"
+              text="Краторная булка N-200i (низ)"
               price={50}
               thumbnail={img1}
             />
@@ -112,11 +97,10 @@ function Constructor () {
         <Button onClick={ showModalHandler } htmlType="button" type="primary" size="medium">Оформить заказ</Button>
         {showModal && 
         <Modal ref={ modalRef } onClose={ closeModalHandler }>
-          <ModalOverlay onClose={ closeModalOverlayHandler }></ModalOverlay>
-          <OrderDetails/>
+          <OrderDetails />
         </Modal>}
         </div>
     </div>
   );
 };
-export default Constructor;
+export default BurgerConstructor;
