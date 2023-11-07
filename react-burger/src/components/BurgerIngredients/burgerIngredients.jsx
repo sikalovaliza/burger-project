@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import styles from './burgerIngredients.module.css';
 import '@ya.praktikum/react-developer-burger-ui-components';
 import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-components';
-import Modal from '../Modal/Modal';
+import Modal from '../Modal/modal';
 import IngridientDetails from '../IngridientDetails/IngridientDetails';
 function BurgerIngredients (props) {
 
@@ -72,11 +72,11 @@ function BurgerIngredients (props) {
          <div className={ styles.container }>
            { breadComponents }
          </div>
-         <h3 className={ styles.title +" text text_type_main-medium " }>Соусы</h3>
+         <h3 className={ styles.title +" text text_type_main-medium mt-10 " }>Соусы</h3>
          <div className={ styles.container }>
            { sauceComponents }
          </div>
-         <h3 className={ styles.title +" text text_type_main-medium " }>Начинка</h3>
+         <h3 className={ styles.title +" text text_type_main-medium mt-10 " }>Начинки</h3>
          <div className={ styles.container }>
            { mainComponents }
          </div>

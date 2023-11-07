@@ -1,5 +1,4 @@
 import styles from './IngridientDetails.module.css';
-import PropTypes from 'prop-types';
 function IngridientDetails ({ ingredient }) {
   return (
     <div className={ styles.main }>

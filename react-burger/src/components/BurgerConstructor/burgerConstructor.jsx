@@ -1,15 +1,14 @@
 import styles from './burgerConstructor.module.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import '@ya.praktikum/react-developer-burger-ui-components';
 import { ConstructorElement, DragIcon, Button } from '@ya.praktikum/react-developer-burger-ui-components';
-import img1 from '../../images/BurgerConstructor1.svg';
-import img2 from '../../images/BurgerConstructor2.svg';
-import img3 from '../../images/BurgerConstructor3.svg';
-import img4 from '../../images/BurgerConstructor4.svg';
-import img5 from '../../images/BurgerConstructor5.svg';
-import icon from '../../images/Icon.svg';
-import ModalOverlay from '../ModalOverlay/ModalOverlay';
-import Modal from '../Modal/Modal';
+import img1 from '../../images/burgerConstructor1.svg';
+import img2 from '../../images/burgerConstructor2.svg';
+import img3 from '../../images/burgerConstructor3.svg';
+import img4 from '../../images/burgerConstructor4.svg';
+import img5 from '../../images/burgerConstructor5.svg';
+import icon from '../../images/icon.svg';
+import Modal from '../Modal/modal';
 import OrderDetails from '../OrderDetails/OrderDetails';
 
 function BurgerConstructor () {
